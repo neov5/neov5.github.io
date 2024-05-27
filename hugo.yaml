@@ -1,0 +1,43 @@
+baseurl: "https://neov5.github.io"  # please update this to your actual URL
+languageCode: "en-us"
+title: "neov5"
+theme: "hugo-xmin"
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  post: "/:slug"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: Posts
+      url: "posts/"
+      weight: 2
+    - name: Categories
+      url: "categories/"
+      weight: 3
+
+params:
+  description: "I like to draw. And busy intersections in cities."
+  footer: "[Github](https://github.com/neov5) | [X](https://x.com/neov5) | [RSS](index.xml)"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)

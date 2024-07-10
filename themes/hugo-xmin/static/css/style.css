@@ -5,6 +5,16 @@ body {
   line-height: 1.5;
 }
 
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: white;
+  }
+  html, img, video, iframe {
+    filter: invert(1);
+  }
+}
+
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }

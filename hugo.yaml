@@ -21,11 +21,14 @@ menu:
 
 params:
   description: "I like to draw. And busy intersections in cities."
-  footer: "[Github](https://github.com/neov5) | [X](https://x.com/neov5) | [RSS](index.xml)"
+  footer: "[Github](https://github.com/neov5) | [X](https://x.com/neoversion5) | [RSS](index.xml)"
 
 markup:
   highlight:
-    codeFences: false
+    codeFences: true
+    guessSyntax: true
+    tabWidth: 4
+    noClasses: false
   goldmark:
     renderer:
       unsafe: true

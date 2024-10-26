@@ -1,17 +1,41 @@
+@import "syntax-light.css" screen;
+
+/* dark mode */
+/* @import "syntax-dark.css" screen and (prefers-color-scheme: dark); */
+
+:root {
+  --fg-color: #111;
+  --bg-color: #fefefe;
+  --accent-color: #eee;
+  --accent-color-2: #ddd;
+  --accent-color-3: #ccc;
+  --table-border-color: #666;
+  --code-bg-color: #f9f9f9;
+  --link-color: #0e5081;
+  --link-visited-color: #7030ab;
+}
+
 body {
   max-width: 800px;
   margin: auto;
   padding: 1em;
   line-height: 1.5;
+  color: var(--fg-color);
+  background-color: var(--bg-color);
 }
 
 /* dark mode */
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: white;
-  }
-  html, img, video, iframe {
-    filter: invert(1);
+  :root {
+    --fg-color: #eee;
+    --bg-color: #222;
+    --accent-color: #333;
+    --accent-color-2: #444;
+    --accent-color-3: #555;
+    --table-border-color: #999;
+    --code-bg-color: #323232;
+    --link-color: #abdeef;
+    --link-visited-color: #98abde;
   }
 }
 
@@ -20,7 +44,7 @@ body {
 .menu li { display: inline-block; }
 .article-meta, .menu a {
   text-decoration: none;
-  background: #eee;
+  background: var(--accent-color);
   padding: 5px;
   border-radius: 5px;
 }
@@ -29,33 +53,44 @@ body {
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
-  color: #ddd;
+  color: var(--accent-color-2);
+}
+a:link {
+  color: var(--link-color);
+}
+a:visited {
+  color: var(--link-visited-color);
 }
 
 /* code */
 pre {
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #eee;
+  border: 1px solid var(--accent-color-2);
   padding: 1em;
   overflow-x: auto;
 }
-code { background: #f9f9f9; }
+code { background: var(--code-bg-color); }
 pre code { background: none; }
 
 /* misc elements */
+a {
+  text-decoration: none;
+}
 img, iframe, video { max-width: 100%; }
+iframe {
+  border: 1px solid var(--accent-color-2);
+}
 main { hyphens: auto; }
 blockquote {
-  background: #f9f9f9;
-  border-left: 5px solid #ccc;
+  background: var(--code-bg-color);
+  border-left: 5px solid var(--accent-color-3);
   padding: 3px 1em 3px;
 }
 
 table {
   margin: auto;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
+  border-top: 1px solid var(--table-border-color);
+  border-bottom: 1px solid var(--table-border-color);
 }
-table thead th { border-bottom: 1px solid #ddd; }
+table thead th { border-bottom: 1px solid var(--accent-color-2); }
 th, td { padding: 5px; }
-thead, tfoot, tr:nth-child(even) { background: #eee; }
+thead, tfoot, tr:nth-child(even) { background: var(--accent-color); }

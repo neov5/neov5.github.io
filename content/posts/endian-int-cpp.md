@@ -13,7 +13,7 @@ machine you could choose to run a VM on today is little endian, and you would ha
 [go out of your way to test that your code runs on big endian machines][2]. Ergo,
 it would have been good enough to do `using le16 = uint16_t` and move on.
 
-A challengs is a challenge though. And I was doing this for fun, so let's have some 
+A challenge is a challenge though. And I was doing this for fun, so let's have some 
 fun.
 
 ## Requirements
@@ -160,9 +160,8 @@ Unfortunately, MIPS doesn't have a native byteswap instruction being RISC, and
 you can see it breaking the shifts down instruction by instruction: `$6` stores 
 `b`, and it is shifted by 24, -24 and -8 and put into `$7`, `$3` and `$2` 
 respectively. We then `and` it together with the masks, noting that the `ff0000`
-mask is too large to fit into the 32-bit instruction and has to beloaded into 
-`$2` instead. Once the bitflip is done, we finally add them together. Compared 
-to 
+mask is too large to fit into the 32-bit instruction and has to be loaded into 
+`$2` instead. Once the bitflip is done, we finally add them together.
 
 This is a tricky example, so feel free to play around with it in godbolt. MIPS
 calling conventions are not very well documented online, but from what I can 

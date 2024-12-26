@@ -3,6 +3,24 @@ title: "endianint.hpp: endianness-maintaining integers in 100 lines of C++(20)"
 date: 2024-10-25T22:37:16+02:00
 ---
 
+**Update 2024/12/26**: After posting on [reddit][endianint-reddit-post], I got
+a lot of good feedback. Someone pointed out the
+[byte order fallacy][byte-order-fallacy], an article by [Rob Pike][rob-pike] on
+how the endianness of the system does not matter, but only the endianness of the
+underlying file/stream does, and endianness should be taken care off only when
+crossing the boundary between system and file. There are other good blogs on
+[endianness][jim-hartzell], and in the light of these opinions the
+implementation below is less than useful. However I'll leave it here in case
+someone picks up a trick or two from it.
+
+Someone had also pointed out how they _despised the font sizing in my source code_. 
+This was a chroma bug, and it turned up only on a mobile. Trying to reproduce
+on chrome dev tools with a smaller screen size didn't work. I ended up 
+connecting my iPhone to my computer and debugging it via Safari dev tools
+remotely, but still couldn't find out why this occurs. Some others have had
+similar issues ([1][chroma-1], [2][chroma-2]), and after finding no chroma fix,
+I've switched to [highlight.js][hljs]
+
 ## Motivation
 
 Oasis' [virtio spec][1], Section 1.4 defines the endian-specific types `le16`,
@@ -215,3 +233,12 @@ should analyse.
 [arithmetic]: https://www.boost.org/doc/libs/1_85_0/boost/endian/arithmetic.hpp
 
 [full-impl]: https://gist.github.com/neov5/f297723cbcdb5b80b2819cea739aa3af
+
+[endianint-reddit-post]: https://www.reddit.com/r/cpp/comments/1gcwi3v/endianinthpp_endiannessmaintaining_integers_in/
+[byte-order-fallacy]: https://commandcenter.blogspot.com/2012/04/byte-order-fallacy.html?m=1
+[rob-pike]: https://en.wikipedia.org/wiki/Rob_Pike
+[jim-hartzell]: https://www.thecodedmessage.com/posts/endianness/
+
+[chroma-1]: https://www.whynotestflight.com/excuses/hunh...-my-code-lines-are-really-long/
+[chroma-2]: https://github.com/adityatelange/hugo-PaperMod/issues/828
+[hljs]: https://highlightjs.org/

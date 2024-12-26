@@ -22,13 +22,27 @@ menu:
 params:
   description: "I like to draw. And busy intersections in cities."
   footer: "[Github](https://github.com/neov5) | [X](https://x.com/neoversion5) | [RSS](index.xml)"
+  assets:
+    disableHLJS: true
 
 markup:
   highlight:
-    codeFences: true
-    guessSyntax: true
-    tabWidth: 4
+    anchorLineNos: false
+    codeFences: false
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: ""
+    lineNos: false
+    lineNumbersInTable: false
     noClasses: false
+    style: ""
+    tabWidth: ""
+  # highlight:
+  #   codeFences: true
+  #   guessSyntax: true
+  #   tabWidth: 4
+  #   noClasses: true
   goldmark:
     renderer:
       unsafe: true

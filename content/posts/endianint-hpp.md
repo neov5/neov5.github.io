@@ -2,7 +2,7 @@
 title: "endianint.hpp: endianness-maintaining integers in 100 lines of C++(20)"
 date: 2024-10-25T22:37:16+02:00
 categories: 
-- programming, 
+- programming
 - c++
 ---
 
